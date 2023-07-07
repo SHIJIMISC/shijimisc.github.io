@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="style.css">
-<header>
-    <h1>蜆塚中学校生徒会</h1>
+<header class="site-header">
+    <h1 class="site-logo"><img src="images/logo.png" alt="WEBDESIGNDAY"></h1>
     <nav class="gnav">
-        <ul class="menu">
-            <li><a href="">現在の取り組み</a></li>
-            <li><a href="">候補</a></li>
-            <li><a href="">候補</a></li>
-            <li><a href="">候補</a></li>
-            <li><a href="">候補</a></li>
+        <ul class="gnav__menu">
+            <li class="gnav__menu__item"><a href="">About</a></li>
+            <li class="gnav__menu__item"><a href="">Works</a></li>
+            <li class="gnav__menu__item"><a href="">Recruit</a></li>
+            <li class="gnav__menu__item"><a href="">News</a></li>
+            <li class="gnav__menu__item"><a href="">Contact</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <p>現在の取り組み</p>
 </main>
+    var _window = $(window),
+    _header = $('.site-header'),
+    heroBottom;
+ 
+_window.on('scroll',function(){
+    heroBottom = $('.hero').height();
+    if(_window.scrollTop() > heroBottom){
+        _header.addClass('transform');   
+    }
+    else{
+        _header.removeClass('transform');   
+    }
+});
+ 
+_window.trigger('scroll');
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 </head>
